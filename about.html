@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Alex Rivera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAFAF7;
+    --panel:#F2EFE6;
+    --ink:#1B1B1F;
+    --ink-soft:#55534D;
+    --brass:#B7902E;
+    --sage:#42564C;
+    --line:#DDD8CC;
+    --max:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 32px;}
+
+  /* ---------- HERO / ABOUT ---------- */
+  .about{
+    padding:96px 0 72px;
+    position:relative;
+  }
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1fr;
+    gap:64px;
+    align-items:center;
+  }
+
+  /* Signature element: generative "portrait" — layered geometric badge + grid,
+     standing in for a photo without depicting a real person. */
+  .portrait{
+    position:relative;
+    aspect-ratio:4/5;
+    border-radius:2px;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(183,144,46,0.16), transparent 55%),
+      var(--panel);
+    border:1px solid var(--line);
+    overflow:hidden;
+  }
+  .portrait svg{width:100%; height:100%; display:block;}
+  .portrait .tag{
+    position:absolute; left:20px; bottom:20px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--ink-soft);
+    background:rgba(250,250,247,0.85);
+    padding:6px 10px;
+    border:1px solid var(--line);
+  }
+
+  .about-copy .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--brass);
+    margin-bottom:18px;
+    display:block;
+  }
+  .about-copy h1{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:clamp(34px, 4.4vw, 52px);
+    line-height:1.05;
+    margin:0 0 6px;
+    letter-spacing:-0.01em;
+  }
+  .about-copy .role{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:18px;
+    color:var(--sage);
+    margin:0 0 28px;
+  }
+  .about-copy p{
+    font-size:16px;
+    line-height:1.75;
+    color:var(--ink-soft);
+    margin:0 0 18px;
+    max-width:46ch;
+  }
+  .cta{
+    margin-top:14px;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--ink);
+    color:var(--paper);
+    text-decoration:none;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    letter-spacing:.04em;
+    padding:14px 26px;
+    border:1px solid var(--ink);
+    transition:background .2s ease, color .2s ease;
+  }
+  .cta:hover{ background:transparent; color:var(--ink); }
+  .cta svg{width:14px; height:14px;}
+
+  /* ---------- SKILLS / SERVICE ROW ---------- */
+  .skills{
+    border-top:1px solid var(--line);
+    padding:64px 0 88px;
+  }
+  .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:48px;
+  }
+  .skill .num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--brass);
+    letter-spacing:.1em;
+    display:block;
+    margin-bottom:16px;
+  }
+  .skill .icon{
+    width:34px; height:34px;
+    margin-bottom:18px;
+    color:var(--sage);
+  }
+  .skill h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:19px;
+    margin:0 0 10px;
+  }
+  .skill p{
+    font-size:14.5px;
+    line-height:1.7;
+    color:var(--ink-soft);
+    margin:0;
+  }
+
+  @media (max-width: 860px){
+    .about-grid{grid-template-columns:1fr; gap:40px;}
+    .about{padding:56px 0 48px;}
+    .skills-grid{grid-template-columns:1fr; gap:40px;}
+    .skills{padding:48px 0 64px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .cta{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<section class="about">
+  <div class="wrap about-grid">
+
+    <div class="portrait">
+      <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Abstract monogram portrait placeholder">
+        <defs>
+          <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#DDD8CC" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="400" height="500" fill="#F2EFE6"/>
+        <rect width="400" height="500" fill="url(#grid)" opacity="0.6"/>
+        <circle cx="200" cy="210" r="120" fill="none" stroke="#42564C" stroke-width="1.5" opacity="0.5"/>
+        <circle cx="200" cy="210" r="80" fill="#B7902E" opacity="0.14"/>
+        <text x="200" y="235" font-family="Fraunces, serif" font-size="88" font-weight="500" fill="#1B1B1F" text-anchor="middle">AR</text>
+        <line x1="60" y1="380" x2="340" y2="380" stroke="#DDD8CC" stroke-width="1"/>
+        <text x="60" y="410" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="2" fill="#55534D">EST. WEB &amp; APP DEV</text>
+      </svg>
+      <span class="tag">Portrait placeholder — swap for a real photo</span>
+    </div>
+
+    <div class="about-copy">
+      <span class="eyebrow">About</span>
+      <h1>Alex Rivera</h1>
+      <p class="role">Creative Web &amp; App Developer</p>
+      <p>My name is Alex Rivera. I'm a web developer, and I'm genuinely passionate about the craft — from the first sketch of an interface to the last line of shipped code.</p>
+      <p>With years of experience building for the web, I've learned that good product work is equal parts discipline and curiosity. I bring both to every project, and I enjoy the collaboration as much as the build.</p>
+      <a class="cta" href="#work">
+        Learn more
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<section class="skills">
+  <div class="wrap skills-grid">
+
+    <div class="skill">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/>
+        <path d="M12 8v6M9 11h6"/>
+      </svg>
+      <h3>Brand Identity</h3>
+      <p>Every project starts with a point of view. I shape marks, palettes, and type systems that hold together across a whole product, not just a homepage.</p>
+    </div>
+
+    <div class="skill">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="12" cy="12" r="9"/>
+        <circle cx="12" cy="12" r="3.2"/>
+        <path d="M12 3v3M12 18v3M3 12h3M18 12h3"/>
+      </svg>
+      <h3>Interface Design</h3>
+      <p>Layouts get the same scrutiny as code: grid, hierarchy, and spacing are decided on purpose, then tested against real content before anything ships.</p>
+    </div>
+
+    <div class="skill">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M8 6L2 12l6 6M16 6l6 6-6 6"/>
+      </svg>
+      <h3>Web Development</h3>
+      <p>Clean, maintainable front-end and back-end work — built to load fast, hold up under real traffic, and stay easy for the next developer to read.</p>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
